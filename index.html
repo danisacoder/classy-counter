@@ -2,23 +2,47 @@
 <html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">
-    <link rel="stylesheet" href="/index.css">
-    <title></title>
+    <!-- Google fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Benne&display=swap" rel="stylesheet">
+    <title>A Classy Counter.</title>
+    <!-- Icons -->
+    <link href="https://css.gg/css?=|add|remove|check|trash" rel="stylesheet">
+    <!-- My stylesheet -->
+    <link href="index.css" rel="stylesheet">
   </head>
   <body>
-    <div>
-      <h1>Counter</h1>
+    <div id="hero">
+      <h1>A Classy Counter.</h1>
+      <p>for when you run out of fingers and toes</p>
+    </div>
+    <div id="content">
       <h2 id="tally-el"></h2>
-      <button id="add-btn">Add</button>
-      <button id="subtract-btn">Subtract</button>
-      <button id="save-btn">Save</button>
-      <button id="delete-btn">Delete All</button>
-
-      <p>Total: </p>
-      <p id="total-el"></p>
-      <p>Record: </p>
-      <ul id="record-el"></ul>
+      <div id="tally-change">
+        <button id="add-btn">
+          <span class="gg-add"></span>
+        </button>
+        <button id="subtract-btn">
+          <span class="gg-remove"></span>
+        </button>
+      </div>
+      <div id="save-delete">
+        <button id="save-btn">
+          <span class="gg-check"></span>
+        </button>
+        <button id="delete-btn">
+          <span class="gg-trash"></span>
+        </button>
+      </div>
+      <div id="total-records">
+        <p>Total: </p>
+        <p id="total-el"></p>
+        <p>Record: </p>
+        <ul id="record-el"></ul>
+      </div>
     <div>
+
     <script src="index.js">
   </body>
 </html>

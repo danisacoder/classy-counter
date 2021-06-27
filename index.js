@@ -23,9 +23,13 @@ function checkStorage() {
 
 // this is just for generating the timestamp
 function getTimeStamp() {
+  // const options = {
+  //   hour12: true
+  // }
   let currentDate = new Date()
+  let formattedDate = currentDate.toLocaleString(navigator.language, {hour: '2-digit', minute: '2-digit'})
   let time = currentDate.getHours() + ":" + currentDate.getMinutes() + ":" + currentDate.getSeconds()
-  return time
+  return formattedDate
 }
 
 // displays the current tally prior to save
@@ -56,7 +60,7 @@ subBtn.addEventListener("click", function() {
 })
 
 // deletes tally, tallyObject, and localStorage contents
-deleteBtn.addEventListener("dblclick", function() {
+deleteBtn.addEventListener("click", function() {
   tally = 0
   localStorage.removeItem("tallyObject")
   tallyObject = {}
@@ -69,7 +73,7 @@ deleteBtn.addEventListener("dblclick", function() {
 function renderObject() {
   recordEl.innerHTML = ""
   const values = Object.values(tallyObject)
-  values.forEach(val => recordEl.innerHTML += (`<li>${val[0]} (${val[1]})</li>`))
+  values.forEach(val => recordEl.innerHTML += (`<li>${val[0]} - ${val[1]}</li>`))
 }
 
 // pushes tallyObject to localStorage
@@ -90,11 +94,12 @@ checkStorage()
 renderTotal()
 
 saveBtn.addEventListener("click", function() {
-  addToObject()
-  renderObject()
-  tally = 0
-  renderTally()
-  saveToStorage()
-  renderTotal()
-
+  if (tally > 0) {
+    addToObject()
+    renderObject()
+    tally = 0
+    renderTally()
+    saveToStorage()
+    renderTotal()
+  }
 })

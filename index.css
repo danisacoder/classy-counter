@@ -13,6 +13,7 @@ body {
     /* font-weight: bold; */
     text-align: center;
     font-family: sans-serif;
+    min-width: 312px;
 }
 
 h1 {
@@ -82,18 +83,15 @@ ul {
   padding: 35px;
   border: 1px solid black;
   color: black;]
-  width: 500px;
+  max-width: 100px;
 
-}
-
-#tally-change {
-  /* display: block; */
-}
-
-#total-records {
 }
 
 span {
   margin: 0 auto;
   padding: 0 auto;
+}
+
+#tally-el {
+  font-family: serif;
 }
